@@ -213,8 +213,8 @@ class QwenTrainer(Trainer):
                     output_dir, state_dict=state_dict, safe_serialization=self.args.save_safetensors
                 )
 
-            if self.tokenizer is not None:
-                self.tokenizer.save_pretrained(output_dir)
+            # if self.tokenizer is not None: # deprecated in new version transformer, just need to save preprocessor
+            #     self.tokenizer.save_pretrained(output_dir)
 
             if self.processor is not None:
                 self.processor.save_pretrained(output_dir)
